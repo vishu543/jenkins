@@ -28,7 +28,7 @@ pipeline{
             stage("Abort"){
                 when{
                     expression{
-                        params.action == destroy
+                        params.action == 'destroy'
                     }
                     steps{
                         echo " The script is stopped succesfully"
