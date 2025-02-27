@@ -22,7 +22,17 @@ pipeline{
                     }
                 }
                 steps{
-                    echo " terrafrom init"
+                    echo " Script has been applied succesfully"
+                }
+            }
+            stage("Abort"){
+                when{
+                    expression{
+                        params.action == destroy
+                    }
+                    steps{
+                        echo " The script is stopped succesfully"
+                    }
                 }
             }
            }
