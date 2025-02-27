@@ -17,7 +17,9 @@ pipeline{
        
            stage("Deployment") {
                 when {
-                    "${params.action}" == 'apply'
+                    expression{
+                    params.action == 'apply'
+                    }
                 }
                 steps{
                     echo " terrafrom init"
