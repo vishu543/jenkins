@@ -11,7 +11,7 @@ pipeline{
             name = "This is parameterized script"
            }
            stage("Deployment"){
-                when{
+                when {
                     "$(params.action)" == 'apply'
                 steps{
                     echo " terrafrom init"
@@ -26,7 +26,7 @@ pipeline{
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'CHOICE', choices: ['apply', 'destroy'], description: 'Pick something')
+        choice(name: 'action', choices: ['apply', 'destroy'], description: 'Pick something')
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }  
