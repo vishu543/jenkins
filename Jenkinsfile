@@ -35,6 +35,15 @@ pipeline{
                         echo " The script is stopped succesfully"
                     }
                 }
+            stage("debug") {
+                
+                if (params.INCLUDE_DEBUG){
+                    echo " debug is present"
+                }
+                else {
+                    echo " Debug is not present"
+                }
+            }
             }
            
             }     
