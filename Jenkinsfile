@@ -36,7 +36,8 @@ pipeline{
                     }
                 }
             stage("debug") {
-                
+                 steps{
+
                 if (params.INCLUDE_DEBUG){
                     echo " debug is present"
                 }
@@ -45,5 +46,7 @@ pipeline{
                 }
             }
             }
+    }
+            }
            
-            }     
+              
