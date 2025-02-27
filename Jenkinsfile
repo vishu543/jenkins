@@ -37,12 +37,14 @@ pipeline{
                 }
             stage("debug") {
                  steps{
+                script{
 
                 if (params.INCLUDE_DEBUG){
                     echo " debug is present"
                 }
                 else {
                     echo " Debug is not present"
+                }
                 }
             }
             }
